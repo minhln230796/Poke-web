@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/minhln230796/Poke-web/static/css/main.f8e32876.css",
+    "main.js": "/minhln230796/Poke-web/static/js/main.5f06dd9c.js",
+    "static/js/787.b6fd0920.chunk.js": "/minhln230796/Poke-web/static/js/787.b6fd0920.chunk.js",
+    "static/media/pokeapi.png": "/minhln230796/Poke-web/static/media/pokeapi.a00a0253e5345153c92c.png",
+    "static/media/poke_bag.png": "/minhln230796/Poke-web/static/media/poke_bag.bbcaea1d74e0abae3a41.png",
+    "index.html": "/minhln230796/Poke-web/index.html",
+    "main.f8e32876.css.map": "/minhln230796/Poke-web/static/css/main.f8e32876.css.map",
+    "main.5f06dd9c.js.map": "/minhln230796/Poke-web/static/js/main.5f06dd9c.js.map",
+    "787.b6fd0920.chunk.js.map": "/minhln230796/Poke-web/static/js/787.b6fd0920.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f8e32876.css",
+    "static/js/main.5f06dd9c.js"
+  ]
+}
