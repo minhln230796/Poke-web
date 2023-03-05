@@ -1,7 +1,8 @@
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import ConfirmRelease from "./components/ConfirmRelease";
+import Swal from "sweetalert2";
 import {update} from "../store/reducers/Page";
+import { remove } from "../store/reducers/MyBag";
 
 export default function MyBag () {
     const list = useSelector(state => state.myBag.list)
@@ -11,6 +12,26 @@ export default function MyBag () {
             status: false
         }))
     }, [])
+
+    function confirmRelease(index) {
+        Swal.fire({
+            icon: "question",
+            text: "Confirm Release?",
+            showCancelButton: true,
+            confirmButtonText: 'Yeah',
+            cancelButtonText: "Nope"
+        }).then(result => {
+            if (result.isConfirmed) {
+                dispatch(remove({
+                    index
+                }))
+                Swal.fire({
+                    icon: "success",
+                    text: "Released!"
+                })
+            }
+        })
+    }
 
     return (
         <div className="container mt-4">
@@ -36,8 +57,7 @@ export default function MyBag () {
                                     </td>
                                     <td className="align-middle">
                                         <button className="btn btn-warning" data-idx={index}
-                                                data-bs-toggle="modal"
-                                                data-bs-target="#confirmReleaseModal">Release</button>
+                                                onClick={() => confirmRelease(index)}>Release</button>
                                     </td>
                                 </tr>
                             ))
@@ -52,7 +72,6 @@ export default function MyBag () {
                     }
                 </div>
             </div>
-            <ConfirmRelease/>
         </div>
     )
 }
