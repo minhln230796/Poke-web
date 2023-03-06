@@ -35,7 +35,7 @@ export default function MyBag () {
 
     return (
         <div className="container mt-4">
-            <div className="card w-50 mx-auto">
+            <div className="card mx-auto">
                 <div className="card-header">
                     <div className="card-title fw-bold">
                         My Bag
@@ -44,26 +44,28 @@ export default function MyBag () {
                 <div className="card-body">
                     {list.length > 0
                         &&
-                    <table className="table">
-                        <tbody>
-                        {
-                            list.map((item, index) => (
-                                <tr key={index}>
-                                    <td width="20%">
-                                        <img src={item.detail.sprites?.back_default} alt={item.name}/>
-                                    </td>
-                                    <td className="align-middle">
-                                        {item.name}
-                                    </td>
-                                    <td className="align-middle">
-                                        <button className="btn btn-warning" data-idx={index}
-                                                onClick={() => confirmRelease(index)}>Release</button>
-                                    </td>
-                                </tr>
-                            ))
-                        }
-                        </tbody>
-                    </table>
+                        <div className="table-responsive">
+                            <table className="table">
+                                <tbody>
+                                {
+                                    list.map((item, index) => (
+                                        <tr key={index}>
+                                            <td width="20%">
+                                                <img src={item.detail.sprites?.back_default} alt={item.name}/>
+                                            </td>
+                                            <td className="align-middle">
+                                                {item.name}
+                                            </td>
+                                            <td className="align-middle">
+                                                <button className="btn btn-warning" data-idx={index}
+                                                        onClick={() => confirmRelease(index)}>Release</button>
+                                            </td>
+                                        </tr>
+                                    ))
+                                }
+                                </tbody>
+                            </table>
+                        </div>
                     }
                     {
                         list.length == 0
